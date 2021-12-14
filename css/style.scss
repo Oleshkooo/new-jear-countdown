@@ -1,0 +1,42 @@
+body {
+  background: #1f1f1f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+}
+
+#newJearIn {
+  font-size: 12vh;
+}
+
+#timer {
+  font-size: 30vh;
+}
+
+// ! portrait
+@media (orientation: portrait) {
+  #newJearIn {
+    font-size: 10vw;
+  }
+  
+  #timer {
+    font-size: 18vw;
+  }
+}
+// ! landscape
+@media (orientation: landscape) {
+  #newJearIn {
+    font-size: 12vh;
+  }
+  
+  #timer {
+    font-size: 30vh;
+  }
+}
