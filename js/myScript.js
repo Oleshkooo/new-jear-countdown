@@ -15,6 +15,10 @@ var countDownFunction = setInterval(function () {
     var minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((gap % (1000 * 60)) / 1000);
 
+    if (days<=0 && hours<=0 && minutes<=0 && seconds<=0) {
+        clearInterval(countDownFunction)
+    }
+
     function addZero(n) {
         return n < 10 ? '0' + n : n;
     }
