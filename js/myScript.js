@@ -17,6 +17,7 @@ var countDownFunction = setInterval(function () {
 
     if (days<=0 && hours<=0 && minutes<=0 && seconds<=0) {
         clearInterval(countDownFunction)
+        days = hours = minutes = seconds = 0
     }
 
     function addZero(n) {
