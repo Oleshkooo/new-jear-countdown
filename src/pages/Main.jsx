@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import Fireworks from '@components/Fireworks'
+
 import './main.scss'
 
 const Main = () => {
@@ -15,9 +17,7 @@ const Main = () => {
     }
     function getTimeToNewYear() {
         const currentTime = new Date().getTime()
-        const newYearTime = new Date(
-            `January 01 ${currentYear + 1} 00:00:00`
-        ).getTime()
+        const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`).getTime()
         const time = newYearTime - currentTime
         const days = Math.floor(time / (1000 * 60 * 60 * 24))
         const localeTime = new Date(time).toLocaleTimeString('en-GB', {
@@ -35,6 +35,9 @@ const Main = () => {
         }
         throw new Error('Invalid argument type')
     }
+    function isNewYear() {
+        return currentYear === 2023
+    }
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -49,10 +52,17 @@ const Main = () => {
     })
 
     return (
-        <div className="section-main">
-            <h3 className="text__secondary text">{currentYear} - {newYear}</h3>
-            <h1 id="timer" className="text__primary text">{timeToNewYear}</h1>
-        </div>
+        <>
+            <div className="section-main">
+                <h3 className="text__secondary text">
+                    {currentYear} - {newYear}
+                </h3>
+                <h1 id="timer" className="text__primary text">
+                    {timeToNewYear}
+                </h1>
+            </div>
+            {isNewYear() && <Fireworks />}
+        </>
     )
 }
 export default Main
