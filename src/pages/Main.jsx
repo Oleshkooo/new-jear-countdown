@@ -45,6 +45,9 @@ const Main = () => {
                 setCurrentYear(() => getCurrentYear())
                 setNewYear(() => getNewYear())
             }
+            if (currentYear === newYear) {
+                setNewYear(() => getNewYear())
+            }
             setTimeToNewYear(getTimeToNewYear())
         }, 1000)
 
