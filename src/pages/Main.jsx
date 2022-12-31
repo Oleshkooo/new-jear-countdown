@@ -8,6 +8,7 @@ const Main = () => {
     const [currentYear, setCurrentYear] = useState(() => getCurrentYear())
     const [newYear, setNewYear] = useState(() => getNewYear())
     const [timeToNewYear, setTimeToNewYear] = useState(() => getTimeToNewYear())
+    const [isFireworks, setFireworks] = useState(false)
 
     function getCurrentYear() {
         return new Date().getFullYear()
@@ -36,7 +37,7 @@ const Main = () => {
         throw new Error('Invalid argument type')
     }
     function isNewYear() {
-        return currentYear === 2023
+        return new Date().getTime() < new Date(`January 02 ${currentYear} 00:00:00`).getTime()
     }
 
     useEffect(() => {
@@ -47,6 +48,9 @@ const Main = () => {
             }
             if (currentYear === newYear) {
                 setNewYear(() => getNewYear())
+            }
+            if (isNewYear()) {
+                setFireworks(true)
             }
             setTimeToNewYear(getTimeToNewYear())
         }, 1000)
@@ -64,7 +68,7 @@ const Main = () => {
                     {timeToNewYear}
                 </h1>
             </div>
-            {isNewYear() && <Fireworks />}
+            {isFireworks && <Fireworks />}
         </>
     )
 }
