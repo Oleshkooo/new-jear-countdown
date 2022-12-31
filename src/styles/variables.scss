@@ -1,0 +1,48 @@
+// ? fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+// ? colors
+$white: #fff;
+$white-hover: darken($white, 15%);
+$white-active: darken($white, 20%);
+
+// $dark: #252525;
+$dark: #1c1c1f;
+$dark-hover: darken($dark, 3%);
+$dark-active: darken($dark, 5%);
+
+
+// ? text
+$font-name: 'Montserrat', sans-serif;
+$font-name-mono: 'Roboto Mono', monospace;
+$font-style: normal;
+$line-height: 140%;
+$line-height-max: 200%;
+
+$fw-extra: 800;
+$fw-bold: 700;
+$fw-semi: 600;
+$fw-medium: 500;
+$fw-regular: 400;
+$fw-light: 300;
+$fw-thin: 300;
+
+$text-primary: #fff;
+$text-primary-hover: darken($text-primary, 10%);
+$text-primary-active: darken($text-primary, 20%);
+$text-secondary: #eee;
+
+
+// ? effects
+$transition: 0.3s ease;
+$transition-fast: 0.2s ease;
+
+
+// ? media
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

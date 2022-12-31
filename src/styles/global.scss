@@ -1,0 +1,112 @@
+@import "@styles/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body,
+html,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    color-scheme: light dark;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    // font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-family: $font-name !important;
+    font-style: $font-style;
+    line-height: $line-height;
+    background: $dark;
+    // color: $text-primary;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    color: inherit;
+    font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: $line-height;
+}
+
+.toaster {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji o !important;
+}
+
+.toast__button {
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 6px 18px;
+
+    background: $dark;
+    border-radius: 20px;
+    transition: $transition;
+
+    &:hover {
+        background: $dark-hover;
+        transition: $transition;
+    }
+    &:active {
+        background: $dark-active;
+        transition: $transition;
+    }
+}
+
+// === === === === === === === === === ===
+
+::-webkit-scrollbar {
+    width: 0px;
+    width: 10px;
+    transition: 0.2s;
+}
+::-webkit-scrollbar-track {
+    //   background: #cfcfcf;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+    transition: 0.2s;
+}
+::-webkit-scrollbar-thumb {
+    background: #939393;
+    border-radius: 8px;
+    border: 3px solid #d4d4d4;
+    transition: 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+}
+
+// === === === === === === === === === ===
+
+.text__primary {
+    color: $text-primary;
+    margin-bottom: 0;
+}
+.text__secondary {
+    color: $text-secondary;
+    margin-bottom: 0;
+}
+.text {
+    font-weight: $fw-light;
+    margin-bottom: 0;
+}
