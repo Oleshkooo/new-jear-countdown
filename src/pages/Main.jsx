@@ -14,7 +14,8 @@ const Main = () => {
         return new Date().getFullYear()
     }
     function getNewYear() {
-        return new Date(`January 01 ${currentYear + 1} 00:00:00`).getFullYear()
+        // return new Date(`January 01 ${getCurrentYear() + 1} 00:00:00`).getFullYear()
+        return getCurrentYear() + 1
     }
     function getTimeToNewYear() {
         const currentTime = new Date().getTime()
@@ -37,7 +38,10 @@ const Main = () => {
         throw new Error('Invalid argument type')
     }
     function isNewYear() {
-        return new Date().getTime() < new Date(`January 02 ${currentYear} 00:00:00`).getTime()
+        const now = new Date().getTime()
+        const fireworksStart = new Date(`January 01 ${currentYear} 00:00:00`).getTime()
+        const fireworksEnd = new Date(`January 02 ${currentYear} 00:00:00`).getTime()
+        return now > fireworksStart && now < fireworksEnd
     }
 
     useEffect(() => {
@@ -49,7 +53,7 @@ const Main = () => {
             if (currentYear === newYear) {
                 setNewYear(() => getNewYear())
             }
-            if (isNewYear()) {
+            if (isNewYear() && !isFireworks) {
                 setFireworks(true)
             }
             setTimeToNewYear(getTimeToNewYear())
